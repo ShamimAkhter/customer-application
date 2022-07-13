@@ -15,6 +15,11 @@ export class CustomerComponent {
         this.logObj = logger.get("1");
         this.logObj.log();
     }
+    
+    selectCustomer(_selected:Object) {
+        
+        this.CustomerModel = _selected as Customer;
+    }
 
     Add() {
         this.CustomerModels.push(this.CustomerModel);

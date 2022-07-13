@@ -25,10 +25,16 @@
     *ngIf="CustomerModel.formCustomerGroup.dirty" 
     [hidden]="!(hasError('required', 'CustomerNameControl'))"
     >Customer name is required</div><br>
-<!-- {{ CustomerModel.CustomerCode }}<br>
-{{ CustomerModel.CustomerName }}<br>
-{{ CustomerModel.CustomerAmount }}<br> -->
-<table>
+
+    
+<grid-ui 
+    [grid-columns]="[{'colName':'CustomerCode'},{'colName':'CustomerName'},{'colName':'CustomerAmount'}]"
+    [grid-data]="CustomerModels"
+    (grid-selected)="selectCustomer($event)"
+    >
+</grid-ui>
+    
+<!-- <table>
     <tr>
         <td>Customer code</td>
         <td>Customer name</td>
@@ -39,4 +45,4 @@
         <td>{{ c.CustomerName }}</td>
         <td>{{ c.CustomerAmount }}</td>
     </tr>
-</table>
+</table> -->
